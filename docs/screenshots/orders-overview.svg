@@ -13,15 +13,15 @@
 <rect x="112" y="218" width="93" height="32" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/><text x="130" y="239" font-family="Arial" font-size="12" fill="#475569">Processing</text>
 <rect x="213" y="218" width="72" height="32" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/><text x="230" y="239" font-family="Arial" font-size="12" fill="#475569">Ready</text>
 <rect x="49" y="270" width="292" height="142" rx="18" fill="#FFFFFF"/><text x="69" y="300" font-family="Arial" font-size="12" font-weight="700" fill="#64748B">ORD-1042</text>
-circle cx="310" cy="296" r="5" fill="#F59E0B"/>
-text x="69" y="325" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">Northstar Retail</text>
-text x="69" y="350" font-family="Arial" font-size="12" fill="#64748B">12 items · Today, 09:42</text>
-text x="69" y="383" font-family="Arial" font-size="12" font-weight="700" fill="#2563EB">Processing</text>
-text x="263" y="383" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">1 849 ₽</text>
-rect x="49" y="428" width="292" height="142" rx="18" fill="#FFFFFF"/><text x="69" y="458" font-family="Arial" font-size="12" font-weight="700" fill="#64748B">ORD-1041</text>
-text x="69" y="483" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">Morrow &amp; Co.</text>
-text x="69" y="508" font-family="Arial" font-size="12" fill="#64748B">4 items · Today, 08:18</text>
-text x="69" y="541" font-family="Arial" font-size="12" font-weight="700" fill="#16A34A">Ready</text>
-text x="277" y="541" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">725 ₽</text>
-text x="49" y="778" font-family="Arial" font-size="12" fill="#94A3B8">A focused operational view for B2B teams</text>
+<circle cx="310" cy="296" r="5" fill="#F59E0B"/>
+<text x="69" y="325" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">Northstar Retail</text>
+<text x="69" y="350" font-family="Arial" font-size="12" fill="#64748B">12 items · Today, 09:42</text>
+<text x="69" y="383" font-family="Arial" font-size="12" font-weight="700" fill="#2563EB">Processing</text>
+<text x="263" y="383" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">1 849 ₽</text>
+<rect x="49" y="428" width="292" height="142" rx="18" fill="#FFFFFF"/><text x="69" y="458" font-family="Arial" font-size="12" font-weight="700" fill="#64748B">ORD-1041</text>
+<text x="69" y="483" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">Morrow &amp; Co.</text>
+<text x="69" y="508" font-family="Arial" font-size="12" fill="#64748B">4 items · Today, 08:18</text>
+<text x="69" y="541" font-family="Arial" font-size="12" font-weight="700" fill="#16A34A">Ready</text>
+<text x="277" y="541" font-family="Arial" font-size="17" font-weight="700" fill="#0F172A">725 ₽</text>
+<text x="49" y="778" font-family="Arial" font-size="12" fill="#94A3B8">A focused operational view for B2B teams</text>
 </svg>
