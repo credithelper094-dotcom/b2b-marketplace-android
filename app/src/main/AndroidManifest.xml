@@ -3,7 +3,7 @@
         android:allowBackup="true"
         android:label="B2B Marketplace"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+        android:theme="@android:style/Theme.DeviceDefault.DayNight.NoActionBar">
         <activity
             android:name=".MainActivity"
             android:exported="true">
