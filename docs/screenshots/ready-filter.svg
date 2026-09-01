@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<rect width="390" height="844" fill="#E9F6D4"/>
+<rect x="19" y="12" width="352" height="820" rx="42" fill="#17212B"/>
+<rect x="29" y="22" width="332" height="800" rx="34" fill="#F9FCF5"/>
+<rect x="151" y="31" width="88" height="22" rx="11" fill="#17212B"/>
+<text x="52" y="93" font-family="Arial" font-size="13" font-weight="700" fill="#64717B">ORDERS / FILTERS</text>
+<text x="52" y="132" font-family="Arial" font-size="28" font-weight="700" fill="#17212B">Ready to ship</text>
+<rect x="52" y="158" width="286" height="48" rx="14" fill="#FFFFFF" stroke="#CBD8C5"/>
+<circle cx="76" cy="182" r="8" fill="none" stroke="#64717B" stroke-width="2"/><path d="m82 188 6 6" stroke="#64717B" stroke-width="2"/>
+text x="98" y="187" font-family="Arial" font-size="14" fill="#94A39B">Search customer or ID</text>
+<rect x="52" y="224" width="67" height="31" rx="15" fill="#17212B"/><text x="70" y="244" font-family="Arial" font-size="12" font-weight="700" fill="#FFFFFF">Ready</text>
+<rect x="52" y="279" width="286" height="126" rx="17" fill="#FFFFFF"/><rect x="52" y="279" width="6" height="126" rx="3" fill="#77B255"/>
+<text x="76" y="311" font-family="Arial" font-size="12" font-weight="700" fill="#64717B">ORD-1041</text>
+<text x="76" y="338" font-family="Arial" font-size="17" font-weight="700" fill="#17212B">Morrow &amp; Co.</text>
+<text x="76" y="364" font-family="Arial" font-size="12" fill="#64717B">4 items · Today, 08:18</text>
+<text x="76" y="388" font-family="Arial" font-size="12" font-weight="700" fill="#239447">Ready</text>
+<text x="264" y="388" font-family="Arial" font-size="17" font-weight="700" fill="#17212B">725 ₽</text>
+<rect x="52" y="427" width="286" height="126" rx="17" fill="#FFFFFF"/><rect x="52" y="427" width="6" height="126" rx="3" fill="#77B255"/>
+<text x="76" y="459" font-family="Arial" font-size="12" font-weight="700" fill="#64717B">ORD-1036</text>
+<text x="76" y="486" font-family="Arial" font-size="17" font-weight="700" fill="#17212B">Kite &amp; Field</text>
+<text x="76" y="512" font-family="Arial" font-size="12" fill="#64717B">8 items · Mon, 14:10</text>
+<text x="76" y="536" font-family="Arial" font-size="12" font-weight="700" fill="#239447">Ready</text>
+<text x="255" y="536" font-family="Arial" font-size="17" font-weight="700" fill="#17212B">1 120 ₽</text>
+<text x="52" y="765" font-family="Arial" font-size="12" fill="#94A39B">Fast filters for operational decisions</text>
+</svg>
