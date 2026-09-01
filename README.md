@@ -1,24 +1,38 @@
 # B2B Marketplace Android
 
-> A focused Android reference implementation for operational B2B order workflows.
+> Мобильный рабочий инструмент для команд, которые обрабатывают B2B‑заказы и не хотят терять время на ручные уточнения.
 
-![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?style=flat-square&logo=kotlin&logoColor=white) ![Compose](https://img.shields.io/badge/Jetpack%20Compose-2024.12-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white) ![Retrofit](https://img.shields.io/badge/Retrofit-2.11-2D8CFF?style=flat-square) ![Status](https://img.shields.io/badge/status-reference%20build-17212B?style=flat-square)
+## Сначала — как это выглядит
 
-## Product preview
+<table><tr><td align="center"><img src="docs/screenshots/orders-overview.svg" alt="Экран списка заказов" width="260"><br><sub>Все заказы в одном списке</sub></td><td align="center"><img src="docs/screenshots/order-details.svg" alt="Экран деталей заказа" width="260"><br><sub>Понятные детали и следующее действие</sub></td><td align="center"><img src="docs/screenshots/ready-filter.svg" alt="Экран фильтра готовых заказов" width="260"><br><sub>Быстрый фильтр готовых заказов</sub></td></tr></table>
 
-<table><tr><td><img src="docs/screenshots/orders-overview.svg" alt="Orders overview" width="220"></td><td><img src="docs/screenshots/order-details.svg" alt="Order details" width="220"></td><td><img src="docs/screenshots/ready-filter.svg" alt="Ready orders filter" width="220"></td></tr></table>
+### 30‑секундный walkthrough
 
-## What is implemented
+<video controls width="360" src="https://github.com/credithelper094-dotcom/b2b-marketplace-android/raw/refs/heads/main/docs/demo/b2b-orders-walkthrough.mp4"></video>
 
-- Orders dashboard with loading, empty, and error states
-- Search by order ID or customer name
-- Status filters for New, Processing, Ready, and Delivered
-- Priority order highlighting and deterministic offline demo data
-- Retrofit API contract with Gson DTO mapping
-- Repository boundary with sorting, filtering, and `Result` error handling
-- ViewModel state exposed through Kotlin `StateFlow`
+[Если видео не воспроизводится в превью — открыть walkthrough отдельно](https://github.com/credithelper094-dotcom/b2b-marketplace-android/blob/main/docs/demo/b2b-orders-walkthrough.mp4).
 
-## Architecture
+В ролике показан доступный demo‑сценарий: список заказов → поиск → фильтр по статусу → обновление данных. Это UI walkthrough текущей reference‑сборки, а не запись production‑backend.
+
+## Что получает бизнес
+
+- Владелец и команда видят актуальный список заказов в одном рабочем сценарии.
+- Приоритетные заказы заметны сразу, а статусы не нужно искать по разным чатам.
+- Поиск по клиенту или ID сокращает путь до нужной операции.
+- Интерфейс оставляет одно понятное следующее действие вместо перегруженного меню.
+- Демо работает offline, а сетевой слой уже подготовлен для подключения backend API.
+
+## Что реализовано
+
+- Orders dashboard с loading, empty и error states
+- поиск по ID заказа и названию клиента
+- фильтры New, Processing, Ready и Delivered
+- выделение приоритетных заказов и сортировка
+- Retrofit API contract с Gson DTO mapping
+- Repository boundary с фильтрацией, сортировкой и `Result` error handling
+- ViewModel state через Kotlin `StateFlow`
+
+## Архитектура
 
 ```text
 MainActivity (Compose UI)
@@ -32,17 +46,17 @@ ApiService (Retrofit contract)
 DemoApiService (offline sample data)
 ```
 
-### Key files
+### Ключевые файлы
 
-| File | Responsibility |
+| Файл | Роль |
 | --- | --- |
-| `MainActivity.kt` | Compose screen, search, filters, order cards, loading and empty states |
-| `OrdersViewModel.kt` | UI state, refresh, search and status intents |
-| `Repository.kt` | DTO mapping, priority sorting, filtering rules, and error boundary |
-| `ApiService.kt` | Retrofit endpoint contract, DTOs, mapper, and offline implementation |
-| `Order.kt` | Domain model, status enum, and currency formatting |
+| `MainActivity.kt` | Экран, поиск, фильтры, карточки заказов и состояния интерфейса |
+| `OrdersViewModel.kt` | Состояние экрана, refresh, поиск и статусы |
+| `Repository.kt` | Маппинг DTO, сортировка, фильтрация и обработка ошибок |
+| `ApiService.kt` | Retrofit endpoint, DTO, mapper и offline implementation |
+| `Order.kt` | Доменная модель заказа и статусы |
 
-## Build configuration
+## Конфигурация сборки
 
 - Android Gradle Plugin: `8.5.2`
 - Kotlin: `2.0.21`
@@ -52,16 +66,16 @@ DemoApiService (offline sample data)
 - Networking: Retrofit `2.11.0` + Gson converter
 - Async state: Kotlin Coroutines + StateFlow
 
-## Run locally
+## Запуск
 
-1. Open the repository in Android Studio Ladybug or newer.
-2. Let Gradle sync using the Android and Maven Central repositories.
-3. Run the `app` configuration on an API 26+ emulator or device.
+1. Откройте репозиторий в Android Studio Ladybug или новее.
+2. Дождитесь синхронизации Gradle из Google и Maven Central.
+3. Запустите конфигурацию `app` на эмуляторе или устройстве API 26+.
 
-## Scope
+## Важная граница демо
 
-This repository is intentionally small and reviewable: it demonstrates a complete vertical slice of an order workflow without pretending to be a full production backend. `DemoApiService` keeps the sample runnable offline. `RetrofitApiService.create(baseUrl)` provides the real network wiring once a backend URL is available.
+Проект намеренно небольшой и проверяемый: он показывает полный вертикальный срез сценария заказов, но не выдаёт reference build за готовую production‑систему. `DemoApiService` позволяет запустить интерфейс без сервера, а `RetrofitApiService.create(baseUrl)` готов подключить реальный backend, когда появится адрес API.
 
-## Related work
+## Связанные материалы
 
-[Portfolio overview](https://github.com/credithelper094-dotcom/freelance-portfolio) · [GitHub profile](https://github.com/credithelper094-dotcom)
+[Портфолио](https://github.com/credithelper094-dotcom/freelance-portfolio) · [Профиль GitHub](https://github.com/credithelper094-dotcom)
