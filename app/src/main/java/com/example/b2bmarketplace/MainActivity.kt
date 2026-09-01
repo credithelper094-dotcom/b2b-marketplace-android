@@ -111,18 +111,13 @@ private fun OrdersScreen(
 
 @Composable
 private fun StatusFilters(selected: OrderStatus?, onSelect: (OrderStatus?) -> Unit) {
-    LazyColumn {
-        item {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(selected = selected == null, onClick = { onSelect(null) }, label = { Text("All") })
-                OrderStatus.entries.forEach { status ->
-                    FilterChip(selected = selected == status, onClick = { onSelect(status) }, label = { Text(status.label) })
-                }
-            }
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        FilterChip(selected = selected == null, onClick = { onSelect(null) }, label = { Text("All") })
+        OrderStatus.entries.forEach { status ->
+            FilterChip(selected = selected == status, onClick = { onSelect(status) }, label = { Text(status.label) })
         }
     }
 }
-
 @Composable
 private fun OrdersList(orders: List<Order>) {
     LazyColumn(verticalArrangement = Arrangement.spacedBy(10.dp)) {
