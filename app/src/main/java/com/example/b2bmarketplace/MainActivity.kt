@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Refresh
@@ -111,9 +112,11 @@ private fun OrdersScreen(
 
 @Composable
 private fun StatusFilters(selected: OrderStatus?, onSelect: (OrderStatus?) -> Unit) {
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        FilterChip(selected = selected == null, onClick = { onSelect(null) }, label = { Text("All") })
-        OrderStatus.entries.forEach { status ->
+    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        item {
+            FilterChip(selected = selected == null, onClick = { onSelect(null) }, label = { Text("All") })
+        }
+        items(OrderStatus.entries) { status ->
             FilterChip(selected = selected == status, onClick = { onSelect(status) }, label = { Text(status.label) })
         }
     }
