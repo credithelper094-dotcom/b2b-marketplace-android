@@ -2,7 +2,7 @@
 
 > A focused Android reference implementation for operational B2B order workflows.
 
-![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?style=flat-square&logo=kotlin&logoColor=white) ![Compose](https://img.shields.io/badge/Jetpack%20Compose-2024.12-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white) ![Status](https://img.shields.io/badge/status-reference%20build-17212B?style=flat-square)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?style=flat-square&logo=kotlin&logoColor=white) ![Compose](https://img.shields.io/badge/Jetpack%20Compose-2024.12-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white) ![Retrofit](https://img.shields.io/badge/Retrofit-2.11-2D8CFF?style=flat-square) ![Status](https://img.shields.io/badge/status-reference%20build-17212B?style=flat-square)
 
 ## Product preview
 
@@ -13,9 +13,10 @@
 - Orders dashboard with loading, empty, and error states
 - Search by order ID or customer name
 - Status filters for New, Processing, Ready, and Delivered
-- Priority order highlighting and deterministic demo data
-- Repository boundary that can be swapped from the demo source to a real backend
-- Pull-to-refresh-ready ViewModel flow through a dedicated refresh action
+- Priority order highlighting and deterministic offline demo data
+- Retrofit API contract with Gson DTO mapping
+- Repository boundary with sorting, filtering, and `Result` error handling
+- ViewModel state exposed through Kotlin `StateFlow`
 
 ## Architecture
 
@@ -24,9 +25,11 @@ MainActivity (Compose UI)
         ↓ collects
 OrdersViewModel (StateFlow + user intents)
         ↓ coordinates
-OrdersRepository (filtering + Result handling)
+Repository (mapping + filtering + Result handling)
         ↓ depends on
-ApiService / DemoApiService (replaceable data source)
+ApiService (Retrofit contract)
+        ↓ replaceable implementation
+DemoApiService (offline sample data)
 ```
 
 ### Key files
@@ -35,8 +38,8 @@ ApiService / DemoApiService (replaceable data source)
 | --- | --- |
 | `MainActivity.kt` | Compose screen, search, filters, order cards, loading and empty states |
 | `OrdersViewModel.kt` | UI state, refresh, search and status intents |
-| `OrdersRepository.kt` | Data loading, priority sorting, and filtering rules |
-| `ApiService.kt` | API contract and local deterministic data source |
+| `Repository.kt` | DTO mapping, priority sorting, filtering rules, and error boundary |
+| `ApiService.kt` | Retrofit endpoint contract, DTOs, mapper, and offline implementation |
 | `Order.kt` | Domain model, status enum, and currency formatting |
 
 ## Build configuration
@@ -46,6 +49,7 @@ ApiService / DemoApiService (replaceable data source)
 - Compile / target SDK: `35`
 - Minimum SDK: `26`
 - UI: Jetpack Compose + Material 3
+- Networking: Retrofit `2.11.0` + Gson converter
 - Async state: Kotlin Coroutines + StateFlow
 
 ## Run locally
@@ -56,7 +60,7 @@ ApiService / DemoApiService (replaceable data source)
 
 ## Scope
 
-This repository is intentionally small and reviewable: it demonstrates a complete vertical slice of an order workflow without pretending to be a full production backend. The `DemoApiService` keeps the sample runnable offline; a network implementation can be introduced behind the same `ApiService` interface.
+This repository is intentionally small and reviewable: it demonstrates a complete vertical slice of an order workflow without pretending to be a full production backend. `DemoApiService` keeps the sample runnable offline. `RetrofitApiService.create(baseUrl)` provides the real network wiring once a backend URL is available.
 
 ## Related work
 
